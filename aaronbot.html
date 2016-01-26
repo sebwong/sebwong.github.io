@@ -1,0 +1,119 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>Aaron Simulator 2016 BETA</h1>
+
+<script>
+function update(input) {
+
+
+	var listElement = document.createElement("LI");
+	var text = document.createTextNode("You: " + input);
+	listElement.appendChild(text);
+	document.getElementById("chatbox").appendChild(listElement);
+	var listElement = document.createElement("LI");
+	var response;
+	var num;
+	
+	//document.write(input.indexOf("?"));
+	
+	input = input.toLowerCase();
+	
+	if (input == ""){
+		response = "What happened.. ?"
+	} else if (input.indexOf("know") != -1) {
+		response = "How do you mean.. ?";
+	} else if (input.indexOf("?") != -1)  {
+		response = "You don't know.. ?";
+	} else if (input.indexOf("have") != -1){
+		response = "HAVE";
+	} else if (input.indexOf("now") != -1){
+		response = "NOW";
+	} else if (input.indexOf("bye") != -1 || input.indexOf("b-") != -1){
+		response = "b-";
+	} else {
+		num = Math.floor((Math.random() * 10) + 1);
+		switch(num) {
+		case 1:
+			response = "Did you know Pnig's my best friend on snapchat.. ?";
+			break;
+		case 2:
+			response = "How do you mean.. ?";
+			break;
+		case 3:
+			response = "What happened.. ?";
+			break;
+		case 4:
+			response = "Such as.. ?";
+			break;
+		case 5:
+			response = "They're not even good!";
+			break;
+		case 6:
+			response = "You've got a lot of loyalty ";
+			break;
+		case 7:
+			response = "I'm HAVING fun" ;
+			break;
+		case 8:
+			response = "Whatever d00d";
+			break;
+		case 9:
+			response = "Pretty cheap";
+			break;
+		case 10:
+			response = "l0l"
+		}
+	}  
+		
+	append = Math.floor((Math.random() * 10) + 1);
+	
+	if (append == 10){
+		response = response + " rather"
+	}
+
+	
+	response = "Aaron: " + response;
+	
+	
+	
+	var responseNode = document.createTextNode(response);
+	listElement.appendChild(responseNode);
+	document.getElementById("chatbox").appendChild(listElement);
+
+
+	var form = document.getElementById("formInput");
+	form.reset();
+	
+	
+	
+	
+
+	return;
+}
+</script>
+
+
+
+<form onsubmit="update(input.value); return false;" class="chat" id="formInput">
+
+  <input type="text" id="input"><br>
+   <input type="submit" value="Submit">
+  
+</form> 
+
+
+
+<div>
+<ul id="chatbox">
+	<li> Aaron: Hey all</li>
+</ul>
+ </div> 
+
+
+</body>
+</html> 
