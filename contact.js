@@ -8,7 +8,7 @@ $(document).ready(function () {
             email: {
               required: true,
               email: true
-            }
+            },
             phone: {
                 required: true,
                 phoneUS: true
