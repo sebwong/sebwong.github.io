@@ -15,9 +15,13 @@ $(document).ready(function () {
             }
         },
         submitHandler: function (form) {
-          alert('valid submission')
-          var $form = $(form);
-          $form.submit();
+          if (($form).valid()) {
+            alert('valid submission');
+            var $form = $(form);
+            $form.submit();
+
+          }
+          return false;
         }
     });
 
